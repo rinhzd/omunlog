@@ -1,2 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
     
+body {
+    background-color: #1f1d28;
+    background-image: url(./images/bg-stars.svg);
+}
+
+.background {
+  position: relative;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #f0f0f0;
+  line-height: 180%;
+  text-align: center;
+
+  
+  height: 100%;
+  
+}
+
+.text-container {
+    position: fixed;
+    width:90%;
+    left: 50%;
+    bottom:10%;
+    transform: translate(-50%,0);
+}
+.text-container img {
+    position: absolute;
+    width:30%;
+    left:0;
+    top:-140%;
+}
+
+.box {
+
+    position: relative;
+    padding: 0 1.5rem;
+    border-radius: 0.3rem;
+ 
+    max-width: 800px;
+    height: 180px;
+    background-color: #191919;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
+    
+    text-align: left;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box .name {
+    font-weight: 500;
+}
+
+p {
+   
+}
+
