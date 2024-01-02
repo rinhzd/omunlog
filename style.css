@@ -6,31 +6,52 @@ body {
     background-image: url(./images/bg-stars.svg);
 }
 
+#main {
+    display: none;
+}
+
+#end {
+    display: none;
+}
+
+.img-container {
+    width:30rem;
+    margin: 0 auto;
+    padding:5%;
+}
+.img-container img {
+    width:100%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
+}
+
+
 .background {
   position: relative;
   font-family: 'Noto Sans KR', sans-serif;
   color: #f0f0f0;
   line-height: 180%;
   text-align: center;
-
+  
   
   height: 100%;
-  
 }
 
 .text-container {
     position: fixed;
     width:90%;
+    max-width: 800px;
     left: 50%;
     bottom:10%;
     transform: translate(-50%,0);
+
 }
 .text-container img {
     position: absolute;
-    width:30%;
+    width:15rem;
     left:0;
-    top:-140%;
+    top:-15rem;
 }
+
 
 .box {
 
@@ -38,7 +59,7 @@ body {
     padding: 0 1.5rem;
     border-radius: 0.3rem;
  
-    max-width: 800px;
+
     height: 180px;
     background-color: #191919;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
@@ -46,10 +67,24 @@ body {
     text-align: left;
     overflow-x: hidden;
     overflow-y: auto;
+
+    cursor: pointer;
 }
+
 
 .box .name {
     font-weight: 500;
+}
+
+.box .icon-next {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid #f0f0f0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
 }
 
 p {
