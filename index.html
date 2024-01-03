@@ -23,7 +23,7 @@
 </head>
 <body>
 <div class="background">
-<audio id ="audio" loop controls><source src="./audio/audio-1.mp3" type="audio/mpeg">
+<audio id ="audio" loop controls src="./audio/audio-1.mp3">
 </audio>
 
   <!-- 첫 페이지 -->
@@ -40,7 +40,7 @@
 
     <div class="text-container">
       <img class="img" alt=""/>
-      <div class="icon-next"></div>
+      <div class="icon-next" data-tooltip-text="스킵" onclick="js:skipScript()"></div>
       <div class="box" onclick="js:nextScript()">
         <p class="name">-</p>
         <p class="desc" id="element"></p>

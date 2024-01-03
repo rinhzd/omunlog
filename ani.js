@@ -22,7 +22,7 @@ const main = document.querySelector("#main");
 const end = document.querySelector("#end");
 const bgm = document.querySelector("#audio");
 
-const endPoint = 10;
+const endPoint = dataList.length-1;
 let Idx; //현재번호
 let script; //스크립트
 
@@ -35,6 +35,10 @@ sound.sound = 0.5;
 
 function goNext(Idx) {
    
+    
+
+    //bgm 변경
+    changBGM();
 
     //이름이 존재하면 해당 이름으로 변경
     var name = document.querySelector(".name");
@@ -104,20 +108,73 @@ function goNext(Idx) {
 function nextScript(){
 
     sound.play();
+    if(Idx === endPoint) {
+        return;
+    }
 
     if(complete){
         //타이핑 종료 일때 
+        
+    
         setTimeout(() => {
-            script.reset();
-            goNext(++Idx); /*질문증가해서 또 호출*/
+            script.reset(); /* 스크립트 초기화 */
+            goNext(++Idx); /* 숫자 증가해서 다음 스크립트 호출*/
         }, 900)
     }
-    else {
-   
+}
+
+
+function skipScript(){
+
+    sound.play();
+    if(Idx === endPoint) {
+        return;
     }
 
+    script.pause(1000);
+
+    setTimeout(() => {
+        script.reset(); /* 스크립트 초기화 */
+        goNext(++Idx); /* 숫자 증가해서 다음 스크립트 호출*/
+    }, 900)
 
 }
+
+function changBGM(){
+
+
+    if(Idx === 35) {
+        bgm.volume="0.5";
+    }
+
+    else if(Idx === 36) {
+        bgm.volume="0.2"
+    }
+
+    else if(Idx === 37) {
+        bgm.volume="0"
+    }
+
+    else if(Idx === 38) {
+        bgm.src = "./audio/audio-3.mp3";
+        bgm.currentTime = 0;
+        bgm.volume="0.2"
+        bgm.play();
+    }
+
+    else if(Idx === 39) {
+        bgm.volume="0.4"
+    }
+
+    else if(Idx === 40) {
+        bgm.volume="0.6"
+    }
+
+    else if(Idx === 40) {
+        bgm.volume="0.8"
+    }
+}
+
 
 function begin(){
 
@@ -134,7 +191,7 @@ function begin(){
 
             bgm.play();
 
-            Idx = 0;
+            Idx = 60;
             goNext(Idx);
     }, 900);       
 }
