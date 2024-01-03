@@ -191,7 +191,7 @@ function begin(){
 
             bgm.play();
 
-            Idx = 60;
+            Idx = 0;
             goNext(Idx);
     }, 900);       
 }
