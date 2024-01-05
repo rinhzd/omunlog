@@ -4,6 +4,10 @@
 body {
     background-color: #1f1d28;
     background-image: url(./images/bg-stars.svg);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
 }
 
 #main {
@@ -15,13 +19,34 @@ body {
 }
 
 .img-container {
-    width:30rem;
+    width:90%;
+    max-width:30rem;
     margin: 0 auto;
-    padding:5%;
+    margin-top:5vh;
 }
 .img-container img {
     width:100%;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 29px 0px;
+}
+
+.img-bg {
+    position: absolute;
+    
+    left:50%;
+    width:95vw;
+    height:80vh;
+    margin-top:5vh;
+   
+    transform: translate(-50%,0);
+    max-width:60rem;
+    filter: blur(5px);
+    -webkit-filter: blur(5x);
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    opacity: 0;
 }
 
 
@@ -39,7 +64,7 @@ body {
 .text-container {
     position: fixed;
     width:90%;
-    max-width: 800px;
+    max-width:50rem;
     left: 50%;
     bottom:10%;
     transform: translate(-50%,0);
@@ -116,7 +141,9 @@ body {
 }
 
 
-p {
-   
-}
+@media (max-width: 767px){
 
+    .img-bg {
+        background-size: cover;
+    }
+}

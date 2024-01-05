@@ -21,16 +21,19 @@ const cover = document.querySelector("#cover");
 const main = document.querySelector("#main");
 const end = document.querySelector("#end");
 const bgm = document.querySelector("#audio");
+const bgImg1 = document.querySelector("#img-bg1");
+const bgImg2 = document.querySelector("#img-bg2");
 
 const endPoint = dataList.length-1;
+
+let timer; // setTimeout
 let Idx; //현재번호
 let script; //스크립트
-
-let complete = false;
-
+let complete = false; // 스크립트 종료
+let lastBG = 2;
 
 let sound = new Audio('./audio/effect_click.wav');
-sound.sound = 0.5;
+sound.volume = 0.5;
 
 
 function goNext(Idx) {
@@ -40,6 +43,11 @@ function goNext(Idx) {
     //bgm 변경
     changBGM();
 
+    //배경 효과 
+    if(dataList[Idx].effIn !== undefined) {
+        ImgEffect('fadeIn');
+    }
+   
     //이름이 존재하면 해당 이름으로 변경
     var name = document.querySelector(".name");
     if(dataList[Idx].name) {
@@ -59,27 +67,6 @@ function goNext(Idx) {
         img.setAttribute('src','');
     }
 
-    // 스크립트 타이핑 효과
-    // setTimeout(() => {
-    //     $('#element').typeIt({
-    //         strings: dataList[qIdx].desc,
-    //         speed: 60,
-    //         autoStart: true,
-    //         startDelay: 450,
-    //         waitUntilVisible: true,
-    //         });
-    
-    // }, 450);   
-    // $('#element').typeIt({
-    //     strings: dataList[Idx].desc,
-    //     speed: 60,
-    //     autoStart: true,
-    //     startDelay: 500,
-
-    //     afterComplete: () => {
-    //         console.log("종료");
-    //     },
-    // });
 
     complete = false;
     script = new TypeIt('#element', {
@@ -93,15 +80,7 @@ function goNext(Idx) {
         startDelay: 900,
     }).go();
 
-    
-    // box.addEventListener("click", function() {
-    //     // 삑 효과음 재생
-    //     sound.play();
 
-    //     setTimeout(() => {
-    //         goNext(++Idx); /*질문증가해서 또 호출*/
-    //     }, 450)
-    // }, false);
 }
 
 
@@ -114,9 +93,11 @@ function nextScript(){
 
     if(complete){
         //타이핑 종료 일때 
-        
+        if(dataList[Idx].effOut !== undefined) {
+            ImgEffect('fadeOut');
+        }
     
-        setTimeout(() => {
+        timer = setTimeout(() => {
             script.reset(); /* 스크립트 초기화 */
             goNext(++Idx); /* 숫자 증가해서 다음 스크립트 호출*/
         }, 900)
@@ -132,8 +113,11 @@ function skipScript(){
     }
 
     script.pause(1000);
+    if(dataList[Idx].effOut !== undefined) {
+        ImgEffect('fadeOut');
+    }
 
-    setTimeout(() => {
+    timer = setTimeout(() => {
         script.reset(); /* 스크립트 초기화 */
         goNext(++Idx); /* 숫자 증가해서 다음 스크립트 호출*/
     }, 900)
@@ -175,15 +159,56 @@ function changBGM(){
     }
 }
 
+function ImgEffect(effect){
+
+
+    if(effect === 'fadeIn') {
+        let src = 'background-image:url(./images/img_bg-' + dataList[Idx].bg + ')';
+        if (lastBG === 1) {
+            bgImg2.setAttribute('style', src);
+            fadeIn(bgImg2);
+            fadeOut(bgImg1);
+            lastBG = 2;
+        }
+        else if(lastBG === 2) {
+            bgImg1.setAttribute('style', src);
+            fadeIn(bgImg1);
+            fadeOut(bgImg2);
+            lastBG = 1;
+        }
+    }
+  
+    else if (effect === 'fadeOut') {
+        if (lastBG === 1) {
+            fadeOut(bgImg1);
+        }
+        else if(lastBG === 2) {
+            fadeOut(bgImg2);
+        }
+    }
+
+
+}
+
+function fadeIn (bgImg) {
+
+    bgImg.style.WebketAnimation ="fadeIn 3s forwards";
+    bgImg.style.animation ="fadeIn 3s forwards";
+}
+function fadeOut (bgImg) {
+    bgImg.style.WebketAnimation ="fadeOut 2s forwards";
+    bgImg.style.animation ="fadeOut 2s forwards";
+}
+
 
 function begin(){
 
     cover.style.WebketAnimation ="fadeOut 2s";
     cover.style.animation ="fadeOut 2s";
-    setTimeout(function(){
+    timer = setTimeout(function(){
         main.style.WebketAnimation ="fadeIn 2s";
         main.style.animation ="fadeIn 2s";
-        setTimeout(() => {
+        timer = setTimeout(() => {
             cover.style.display="none";
             main.style.display ="block";
             }, 900);
