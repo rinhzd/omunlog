@@ -27,22 +27,22 @@ const dataList = [
         desc:'파티와 연회를 좋아하는 타입은 아니었으니 이 또한 나쁘지 않다고 생각하면서.',
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '2.jpg', effIn: true, 
         name:'',
         desc:'창문에는 굳게 잠금장치가 걸려 있었다. 소라바미의 충격에 대비한 저택의 특수 유리가 아이러니하게도 철창처럼 소포라를 가둔 셈이다.',
     },
     {
-        img: 0, choice: false, bg: '2.jpg', effIn: true, 
+        img: 0, choice: false, bg: '', 
         name:'',
         desc:'소포라는 근신 중이었다. 피앙세가 됐다는 것은 숨길래야 숨길 수 없는 일이었으니 이 반응을 예상 못한 것은 아니었지만…….',
     },
     {
-        img: 1, choice: false, bg: '', effOut: true,
+        img: 1, choice: false, bg: '', 
         name:'소포라 아델라인',
         desc:'“오늘까지 가둬둘 줄은 몰랐지.”',
     },
     {
-        img: 1, choice: false, bg: '', effIn: true, 
+        img: 1, choice: false, bg: '',effOut: true,
         name:'소포라 아델라인',
         desc:'“......”',
     },
