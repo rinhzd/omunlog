@@ -61,7 +61,7 @@ function begin(){
 
             bgm.play();
 
-            Idx = 32;
+            Idx = 0;
             goNext(Idx);
     }, 900);       
 }
