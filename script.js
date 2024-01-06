@@ -334,7 +334,7 @@ const dataList = [
     {
         img: 1, choice: false, bg: '',
         name:'소포라 아델라인',
-        desc:'“…아니거든…?”',
+        desc:'“…아, 아니거든…?”',
     },
     {
         img: 2, choice: false, bg: '',
@@ -349,7 +349,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:['소포라에게 춤이란, 어쩌면 ‘지금’ 이 순간에 가까운 것이 아닐까.','아마도 네가 일깨워 준 것.']
+        desc:['소포라에게 춤이란, 어쩌면 ‘지금’ 이 순간에 가까운 것이라고.','아마도 네가 일깨워 준 것.']
     },
     {
         img: 0, choice: false, bg: '',

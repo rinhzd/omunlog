@@ -69,7 +69,7 @@ function begin(){
 
 
 function goNext(Idx) {
- 
+
     //bgm 변경
     changBGM();
 
@@ -124,6 +124,7 @@ function nextScript(){
 
     clickSound.play();
     if(Idx === endPoint) {
+       
         return;
     }
 
@@ -145,6 +146,7 @@ function skipScript(){
 
     clickSound.play();
     if(Idx === endPoint) {
+       
         return;
     }
 
@@ -265,7 +267,17 @@ function soundEffect(effect){
 }
 
 
-function audioFadeOut(audio){
+// function goEnd(){
+//     main.style.WebketAnimation ="fadeOut 2s";
+//     main.style.animation ="fadeOut 2s";
+//     timer = setTimeout(function(){
+//         end.style.WebketAnimation ="fadeIn 2s";
+//         end.style.animation ="fadeIn 2s";
+//         timer = setTimeout(() => {
+//             main.style.display="none";
+//             end.style.display ="block";
+//             }, 900);
+         
+//     }, 900);    
 
-
-}
+// }
