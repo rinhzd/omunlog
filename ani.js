@@ -21,6 +21,7 @@ const cover = document.querySelector("#cover");
 const main = document.querySelector("#main");
 const end = document.querySelector("#end");
 const bgm = document.querySelector("#audio");
+const bgm2 = document.querySelector("#audio2");
 const bgImg1 = document.querySelector("#img-bg1");
 const bgImg2 = document.querySelector("#img-bg2");
 
@@ -32,21 +33,56 @@ let script; //스크립트
 let complete = false; // 스크립트 종료
 let lastBG = 2;
 
-let sound = new Audio('./audio/effect_click.wav');
-sound.volume = 0.5;
+
+let clickSound = new Audio('./audio/sound_click.wav');
+clickSound.volume = 0.5;
+
+let sound = {
+    click: new Audio('./audio/sound_click.wav'),
+    knock: new Audio('./audio/sound_knock.mp3'),
+    break: new Audio('./audio/sound_breaking3.mp3'),
+}
+sound.click.volume = 0.5;
+sound.break.volume = 0.3;
+
+
+function begin(){
+
+    cover.style.WebketAnimation ="fadeOut 2s";
+    cover.style.animation ="fadeOut 2s";
+    timer = setTimeout(function(){
+        main.style.WebketAnimation ="fadeIn 2s";
+        main.style.animation ="fadeIn 2s";
+        timer = setTimeout(() => {
+            cover.style.display="none";
+            main.style.display ="block";
+            }, 900);
+            
+
+            bgm.play();
+
+            Idx = 32;
+            goNext(Idx);
+    }, 900);       
+}
+
 
 
 function goNext(Idx) {
-   
-    
-
+ 
     //bgm 변경
     changBGM();
+
+    //효과음 
+    if(dataList[Idx].sound !== undefined) {
+        soundEffect(dataList[Idx].sound);
+    }
 
     //배경 효과 
     if(dataList[Idx].effIn !== undefined) {
         ImgEffect('fadeIn');
     }
+
    
     //이름이 존재하면 해당 이름으로 변경
     var name = document.querySelector(".name");
@@ -86,7 +122,7 @@ function goNext(Idx) {
 
 function nextScript(){
 
-    sound.play();
+    clickSound.play();
     if(Idx === endPoint) {
         return;
     }
@@ -107,7 +143,7 @@ function nextScript(){
 
 function skipScript(){
 
-    sound.play();
+    clickSound.play();
     if(Idx === endPoint) {
         return;
     }
@@ -128,34 +164,50 @@ function changBGM(){
 
 
     if(Idx === 35) {
-        bgm.volume="0.5";
+        bgm.volume="0.6";
     }
 
     else if(Idx === 36) {
-        bgm.volume="0.2"
+        bgm.volume="0.5"
     }
 
     else if(Idx === 37) {
-        bgm.volume="0"
-    }
-
-    else if(Idx === 38) {
-        bgm.src = "./audio/audio-3.mp3";
-        bgm.currentTime = 0;
-        bgm.volume="0.2"
-        bgm.play();
-    }
-
-    else if(Idx === 39) {
         bgm.volume="0.4"
     }
 
-    else if(Idx === 40) {
-        bgm.volume="0.6"
+    else if(Idx === 38) {
+        bgm.volume="0.3"
     }
 
+    else if(Idx === 39) {
+        bgm.volume="0.2"
+    }
+
+
     else if(Idx === 40) {
-        bgm.volume="0.8"
+        bgm2.src = "./audio/audio-4.mp3";
+        bgm2.currentTime = 0;
+        
+        bgm2.play();
+        bgm2.volume="0.05"
+        bgm.volume="0.1"
+    }
+
+    else if(Idx === 41) {
+        bgm2.volume="0.1"
+        bgm.pause();
+    }
+
+    else if(Idx === 42) {
+        bgm2.volume="0.2"
+    }
+
+    else if(Idx === 43) {
+        bgm2.volume="0.3"
+    }
+
+    else if(Idx === 44) {
+        bgm2.volume="0.4"
     }
 }
 
@@ -201,25 +253,19 @@ function fadeOut (bgImg) {
 }
 
 
-function begin(){
 
-    cover.style.WebketAnimation ="fadeOut 2s";
-    cover.style.animation ="fadeOut 2s";
-    timer = setTimeout(function(){
-        main.style.WebketAnimation ="fadeIn 2s";
-        main.style.animation ="fadeIn 2s";
-        timer = setTimeout(() => {
-            cover.style.display="none";
-            main.style.display ="block";
-            }, 900);
-            
+function soundEffect(effect){
 
-            bgm.play();
-
-            Idx = 0;
-            goNext(Idx);
-    }, 900);       
+    if(effect === 'knock') {
+        sound.knock.play();
+    }
+    else if (effect === 'break') {
+        sound.break.play();
+    }
 }
 
 
+function audioFadeOut(audio){
 
+
+}

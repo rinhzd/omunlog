@@ -26,7 +26,11 @@ const dataList = [
         name:'',
         desc:'파티와 연회를 좋아하는 타입은 아니었으니 이 또한 나쁘지 않다고 생각하면서.',
     },
-
+    {
+        img: 0, choice: false, bg: '',
+        name:'',
+        desc:'창문에는 굳게 잠금장치가 걸려 있었다. 소라바미의 충격에 대비한 저택의 특수 유리가 아이러니하게도 철창처럼 소포라를 가둔 셈이다.',
+    },
     {
         img: 0, choice: false, bg: '2.jpg', effIn: true, 
         name:'',
@@ -50,7 +54,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'지크 아델라인',
-        desc:'<i>그렇게 리벌처에 타고 싶었나? 설마 네가 그 녀석 밑으로 기어들어 가기를 자처할 줄은 몰랐는데.</i>',
+        desc:'<i>그렇게 리벌처에 타고 싶었어? 설마 네가 그 녀석 밑으로 기어들어 가기를 자처할 줄은 몰랐는데.</i>',
     },
     {
         img: 0, choice: false, bg: '',
@@ -163,7 +167,7 @@ const dataList = [
         desc:['그때였다.', '순간 소포라는 자신이 코레를 생각하다 헛것을 보는 게 아닐까 생각했다.'],
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '', sound: 'knock',
         name:'-',
         desc:'거꾸로 올려다보는 창문 밖으로 익숙한 금발 머리칼이 보였다. 그리고 곧이어 똑똑똑- 하는 소리까지.',
     },
@@ -175,12 +179,12 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:'정신이 번쩍 들어 몸을 벌떡 일으키면 대충 창문 난간에 발을 딛고 매달려 있는 코레의 모습이 눈에 들어왔다.',
+        desc:'정신이 번쩍 들어 몸을 벌떡 일으키면 창문 난간에 발을 딛고 매달려 있는 코레의 모습이 대강 눈에 들어왔다.',
     },
     {
         img: 1, choice: false, bg: '',
         name:'-',
-        desc:'연회장은 어쩌고 설마 여길 온 것일까',
+        desc:'연회장은 어쩌고 설마 여길 온 거야?',
     },
     {
         img: 1, choice: false, bg: '',
@@ -203,12 +207,12 @@ const dataList = [
         desc:'연회장에서 어떤 사건이 일어났을까. 지크가 코레에게 맞았을까? 꼴사납게 나가떨어졌을까? 아마 그런 생각들로 머릿속이 날뛰고 있을 때쯤.',
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '4.jpg', effIn:true,
         name:'-',
         desc:'도시 전체에 크고 익숙한 경보음이 울렸다. ',
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '5.jpg', effIn:true,
         name:'-',
         desc:'그리고 그 소리가 환청이 아니라는 듯, 천천히 축제의 풍경 군데군데에 대피를 알리는 붉은 경고등이 더해지기 시작했다.',
     },
@@ -238,17 +242,17 @@ const dataList = [
         desc:'“기다려봐. 네가 아무리 슈발리에라도─”',
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '6.jpg', effIn: true,
         name:'-',
         desc:['팟.', '작게 흠집처럼 생긴 흰 금은 잣대를 조각내고, 곧이어 자잘한 소리를 내며 유리창을 가득 뒤덮는다.'],
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '7.gif', effIn: true, effOut: true, sound: 'break',
         name:'-',
         desc:'유리는 회색 모래바람만큼이나 눈앞에서 허무하게 부서져 내리고 만다.',
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '', 
         name:'-',
         desc:'​저 멍청이가... 저걸 깼어?',
     },
@@ -265,12 +269,22 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:'짜릿하다며 코레가 웃으면, 기가 막혀 할 말을 잃어버린다.',
+        desc:['짜릿하다며 코레가 웃으면, 기가 막혀 할 말을 잃어버리게 되는 패턴이 아주 낯익다.', '지금껏 코레를 만날 때마다 그랬다.'],
+    },
+    {
+        img: 0, choice: false, bg: '',
+        name:'-',
+        desc:'학교에서, 처음 만났을 때, 학교 안에서, 부딪칠 때마다, 그리고 얼마 전, 엉망진창인 첫 출격. 그리고…',
     },
     {
         img: 1, choice: false, bg: '',
         name:'소포라 아델라인',
-        desc:'“또, 이런 식이야.”',
+        desc:'“너는 대체 생ㄱ-”',
+    },
+    {
+        img: 0, choice: false, bg: '',
+        name:'-',
+        desc:'또 이런 적이 있었다. 이 곳에서.',
     },
     {
         img: 0, choice: false, bg: '',
@@ -280,12 +294,17 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:['이 바보는 생각할 줄을 모른다.',' 아니, 재능이 없으니 그럴 수밖에 없겠지. 그래서 눈앞의 것을 부수는 방법밖에 모른다.'],
+        desc:['이 바보는 생각할 줄을 모른다.', '남들의 기대가 부서지는 표정이 너는 좋다고 말했지만…'],
     },
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:['그렇게 부수어서 기묘하게도 결국 자신에게 찾아오곤 한다. 지금처럼, 그때처럼, 갇혀 있던 소포라에게.','그것이 우연이든 운명이든…'],
+        desc:['아니,', '재능이 없으니 그럴 수밖에 없겠지. 그래서 눈앞의 것을 부수는 방법밖에 택하지 않는 걸까.'],
+    },
+    {
+        img: 0, choice: false, bg: '',
+        name:'-',
+        desc:['그렇게 부수어서 기묘하게도 자신에게 찾아오곤 한다. 지금처럼, 그때처럼, 갇혀 있던 소포라에게.','그것이 우연이든 운명이든…'],
     },
     {
         img: 0, choice: false, bg: '',
@@ -295,12 +314,17 @@ const dataList = [
     {
         img: 1, choice: false, bg: '',
         name:'소포라 아델라인',
-        desc:'“피 좀 닦아. 너, 나타난 방향은 알고 있는 거야?”',
+        desc:'“피 좀 닦아, 너. 나타난 방향은 알고 있는 거야?”',
     },
     {
         img: 2, choice: false, bg: '',
         name:'코레 메르쿠리',
-        desc:'“알거든! 그리고, 몰라도... 네가 알고 있겠지.”',
+        desc:'“알거든! 따지자면 내가 더 경험자니까, 발목 잡지나 말고 잘 따라오라고.”',
+    },
+    {
+        img: 2, choice: false, bg: '',
+        name:'코레 메르쿠리',
+        desc:'“그리고, 모르면… 뭐, 네가 알고 있겠지.”',
     },
     {
         img: 1, choice: false, bg: '',
@@ -310,7 +334,17 @@ const dataList = [
     {
         img: 2, choice: false, bg: '',
         name:'코레 메르쿠리',
-        desc:'“좋아, 그럼 가자고!”',
+        desc:'“또 내숭은.”',
+    },
+    {
+        img: 1, choice: false, bg: '',
+        name:'소포라 아델라인',
+        desc:'“…아니거든…?”',
+    },
+    {
+        img: 2, choice: false, bg: '',
+        name:'코레 메르쿠리',
+        desc:'“아무튼. 좋아, 그럼 얼른 가자고!!”',
     },
     {
         img: 0, choice: false, bg: '',
@@ -320,7 +354,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:['적어도 소포라에게 본능이란, 춤보다는 ‘지금’ 이 순간에 가까운 것이라고','네가 알려 주었다.']
+        desc:['적어도 소포라에게 본능이란, 춤보다는 ‘지금’ 이 순간에 가까운 것이라고','네가 일깨워 주었다.']
     },
     {
         img: 0, choice: false, bg: '',
