@@ -42,7 +42,7 @@ const dataList = [
         desc:'“오늘까지 가둬둘 줄은 몰랐지.”',
     },
     {
-        img: 1, choice: false, bg: '',effOut: true,
+        img: 1, choice: false, bg: '',
         name:'소포라 아델라인',
         desc:'“......”',
     },
