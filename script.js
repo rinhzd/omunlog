@@ -54,7 +54,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'지크 아델라인',
-        desc:'<i>그렇게 리벌처에 타고 싶었어? 설마 네가 그 녀석 밑으로 기어들어 가기를 자처할 줄은 몰랐는데.</i>',
+        desc:'<i>그렇게 리벌처에 타고 싶었어? 설마 네가 그 덜 떨어진 녀석 밑으로 기어들어 가기를 자처할 줄은 몰랐는데.</i>',
     },
     {
         img: 0, choice: false, bg: '',
@@ -69,17 +69,12 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'지크 아델라인',
-        desc:'<i>아니면, 뭐, 날 위해서 잘 해보던가. 최초로 슈발리에를 퍼지 시킨 피앙세라던가하핫</i>',
-    },
-    {
-        img: 0, choice: false, bg: '',
-        name:'지크 아델라인',
-        desc:'<i>근데 무슨 생각일진 몰라도 괜히 힘 빼지는 말라고.</i>',
+        desc:'<i>아니면, 뭐 다른 속셈인가? 최초로 슈발리에를 퍼지 시킨 피앙세라던가? 하하핫-</i>',
     },
     {
         img: 0, choice: false, bg: '', effOut: true,
         name:'지크 아델라인',
-        desc:'<i>네가 안 가면 그놈, 그냥 출격할걸?</i>',
+        desc:'<i>그것도 괜히 힘 빼는 짓이라고. 네가 안 가면 그놈, 그냥 출격할걸?</i>',
     },
     {
         img: 0, choice: false, bg: '',
