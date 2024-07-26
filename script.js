@@ -12,7 +12,7 @@ choice : ['선택지1','선택지2']
 
 const dataList = [
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: '', 
         name:'',
         desc:'[춤은 인간의 본능적인 몸짓으로 인간이 처음부터 가지고 태어나는 활동으로서, 환경적 외부 요인이 뇌에 전달되면 스스로 표출되는 인간 본연의 신체 활동이다. 신체의 능력과 정신의 능력은 서로 상호 영향을 미치는 것이다.]',
     },
@@ -27,7 +27,7 @@ const dataList = [
         desc:'파티와 연회를 좋아하는 타입은 아니었으니 이 또한 나쁘지 않다고 생각하면서.',
     },
     {
-        img: 0, choice: false, bg: '2.jpg', effIn: true, 
+        img: 0, choice: false, bg: '2.jpg', effIn: true,  
         name:'',
         desc:'창문에는 굳게 잠금장치가 걸려 있었다. 소라바미의 충격에 대비한 저택의 특수 유리가 아이러니하게도 철창처럼 소포라를 가둔 셈이다.',
     },
@@ -47,7 +47,7 @@ const dataList = [
         desc:'“......”',
     },
     {
-        img: 0, choice: false, bg: '3.png', effIn: true, 
+        img: 0, choice: false, bg: '3.png', effIn: true,  
         name:'지크 아델라인',
         desc:'<i>야, 정신 나갔어, 소포라?</i>',
     },
@@ -89,7 +89,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:'일이 어떻게 굴러가고 있는지는 잘 모르겠지만, 다행히 그동안 소라바미의 유도는 없었다. 하지만, 당연히 유도하지 않아도 얼마든지 공습은 있을 수 있잖아.',
+        desc:'일이 어떻게 굴러가고 있는지는 잘 모르겠지만 다행히도 그동안 소라바미의 유도는 없었다. 하지만, 당연히 유도하지 않아도 얼마든지 공습은 있을 수 있잖아.',
     },
     {
         img: 1, choice: false, bg: '',
@@ -119,7 +119,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:'아마 설명할 수는 없지만 무언가 마음을 건드렸던 것은 확실하다.',
+        desc:'설명할 수는 없지만 무언가 마음을 건드렸던 것은 확실하다.',
     },
     {
         img: 0, choice: false, bg: '',
@@ -129,7 +129,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:'‘성가시다’란 의미는 라이벌 의식도 같잖은 열등감도 아니었던 것 같다. 비가 내리는 거리를 누군가보다 빨리 질주하고 싶은 욕망은 소포라에게 없었으니까.',
+        desc:'‘성가시다’는 건 라이벌 의식도 열등감도 아니었던 것 같다. 비가 내리는 거리를 누군가보다 빨리 질주하고 싶은 욕망은 소포라에게 없었으니까.',
     },
     {
         img: 0, choice: false, bg: '',
@@ -174,7 +174,7 @@ const dataList = [
     {
         img: 0, choice: false, bg: '',
         name:'-',
-        desc:'정신이 번쩍 들어 몸을 벌떡 일으키면 창문 난간에 발을 딛고 매달려 있는 코레의 모습이 대강 눈에 들어왔다.',
+        desc:'정신이 번쩍 들어 몸을 벌떡 일으키면 창문 난간에 발을 딛고 매달려 있는 코레의 모습이 눈에 들어왔다.',
     },
     {
         img: 1, choice: false, bg: '',
@@ -202,12 +202,12 @@ const dataList = [
         desc:'연회장에서 어떤 사건이 일어났을까. 지크가 코레에게 맞았을까? 꼴사납게 나가떨어졌을까? 아마 그런 생각들로 머릿속이 날뛰고 있을 때쯤.',
     },
     {
-        img: 0, choice: false, bg: '4.jpg', effIn:true,
+        img: 0, choice: false, bg: '4.jpg', effIn:true,  
         name:'-',
         desc:'도시 전체에 크고 익숙한 경보음이 울렸다. ',
     },
     {
-        img: 0, choice: false, bg: '5.jpg', effIn:true,
+        img: 0, choice: false, bg: '5.jpg', effIn:true,  
         name:'-',
         desc:'그리고 그 소리가 환청이 아니라는 듯, 천천히 축제의 풍경 군데군데에 대피를 알리는 붉은 경고등이 더해지기 시작했다.',
     },
@@ -237,12 +237,12 @@ const dataList = [
         desc:'“기다려봐. 네가 아무리 슈발리에라도─”',
     },
     {
-        img: 0, choice: false, bg: '6.jpg', effIn: true,
+        img: 0, choice: false, bg: '6.jpg', effIn: true,  
         name:'-',
         desc:['팟.', '작게 흠집처럼 생긴 흰 금은 잣대를 조각내고, 곧이어 자잘한 소리를 내며 유리창을 가득 뒤덮는다.'],
     },
     {
-        img: 0, choice: false, bg: '7.gif', effIn: true, effOut: true, sound: 'break',
+        img: 0, choice: false, bg: '7.gif', effIn: true, effOut: true, sound: 'break',  
         name:'-',
         desc:'유리는 회색 모래바람만큼이나 눈앞에서 허무하게 부서져 내리고 만다.',
     },
@@ -352,7 +352,7 @@ const dataList = [
         desc:['소포라에게 춤이란, 어쩌면 ‘지금’ 이 순간에 가까운 것이라고.','아마도 네가 일깨워 준 것.']
     },
     {
-        img: 0, choice: false, bg: '',
+        img: 0, choice: false, bg: 'end.png', effIn: true, end:true,
         name:'-',
         desc:['두 쌍의 다리가 사이렌 소리에 맞춰 춤을 추듯 한 곳을 향한다.', '붉은 등이 비추는 아래에서─'],
     },

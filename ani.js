@@ -25,6 +25,7 @@ const bgm2 = document.querySelector("#audio2");
 const bgImg1 = document.querySelector("#img-bg1");
 const bgImg2 = document.querySelector("#img-bg2");
 
+
 const endPoint = dataList.length-1;
 
 let timer; // setTimeout
@@ -80,10 +81,17 @@ function goNext(Idx) {
 
     //배경 효과 
     if(dataList[Idx].effIn !== undefined) {
-        ImgEffect('fadeIn');
+
+       if(dataList[Idx].end !== undefined) {
+            ImgEffect('fadeBlurIn');
+         }
+       else {
+            ImgEffect('fadeIn');
+         }
+        
     }
 
-   
+
     //이름이 존재하면 해당 이름으로 변경
     var name = document.querySelector(".name");
     if(dataList[Idx].name) {
@@ -213,7 +221,7 @@ function changBGM(){
     }
 }
 
-function ImgEffect(effect){
+function ImgEffect(effect, end){
 
 
     if(effect === 'fadeIn') {
@@ -229,6 +237,26 @@ function ImgEffect(effect){
             fadeIn(bgImg1);
             fadeOut(bgImg2);
             lastBG = 1;
+
+            if(end) {
+                removeBlur(bgImg1);
+                }
+        }
+    }
+
+    else if(effect === 'fadeBlurIn') {
+        let src = 'background-image:url(./images/img_bg-' + dataList[Idx].bg + ')';
+        if (lastBG === 1) {
+            bgImg2.setAttribute('style', src);
+            fadeInNoBlur(bgImg2);
+            fadeOut(bgImg1);
+            lastBG = 2;
+        }
+        else if(lastBG === 2) {
+            bgImg1.setAttribute('style', src);
+            fadeInNoBlur(bgImg1);
+            fadeOut(bgImg2);
+            lastBG = 1;
         }
     }
   
@@ -240,8 +268,6 @@ function ImgEffect(effect){
             fadeOut(bgImg2);
         }
     }
-
-
 }
 
 function fadeIn (bgImg) {
@@ -254,6 +280,10 @@ function fadeOut (bgImg) {
     bgImg.style.animation ="fadeOut 2s forwards";
 }
 
+function fadeInNoBlur (bgImg) {
+    bgImg.style.WebketAnimation ="fadeBlurIn 5s forwards";
+    bgImg.style.animation ="fadeBlurIn 5s forwards";
+}
 
 
 function soundEffect(effect){
@@ -266,18 +296,3 @@ function soundEffect(effect){
     }
 }
 
-
-// function goEnd(){
-//     main.style.WebketAnimation ="fadeOut 2s";
-//     main.style.animation ="fadeOut 2s";
-//     timer = setTimeout(function(){
-//         end.style.WebketAnimation ="fadeIn 2s";
-//         end.style.animation ="fadeIn 2s";
-//         timer = setTimeout(() => {
-//             main.style.display="none";
-//             end.style.display ="block";
-//             }, 900);
-         
-//     }, 900);    
-
-// }

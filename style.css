@@ -39,16 +39,37 @@ body {
    
     transform: translate(-50%,0);
     max-width:60rem;
-    filter: blur(5px);
-    -webkit-filter: blur(5x);
+
 
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
 
     opacity: 0;
+
 }
 
+.img-bg.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5x);
+}
+
+
+.img-end {
+    position: absolute;
+    left:50%;
+    width:95vw;
+    height:80vh;
+    margin-top:5vh;
+    transform: translate(-50%,0);
+    max-width:60rem;
+
+    opacity: 0;
+    display: none;
+}
+.img-end img {
+    width:100%;
+}
 
 .background {
   position: relative;
